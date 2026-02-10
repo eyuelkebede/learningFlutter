@@ -7,102 +7,48 @@ class ChatPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:Text('hi man'),
-        actions:[
-          IconButton(onPressed:(){print('hell yea');}, icon: Icon(Icons.logout))
-        ],
-        backgroundColor: Colors.green,
-        elevation:0,
+        backgroundColor: Colors.red,
+        actions: [Icon(Icons.logout)],
+        title: Text('ChatApp', style: TextStyle(fontWeight: FontWeight.bold))
       ),
-      body: Row(
-        children:[
-          Flexible(
-          fit:FlexFit.loose,
-          flex:1,
-              child:Column(
-
-                  children: [
-                    Container(
-                      height:100,
-                      color:Colors.black,
-                    )
-                  ],
+      body:
+          ListView(
+            padding: const EdgeInsets.all(12),
+            children: [
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  width:100,
+                  padding: EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: const Text(
+                    'Hi',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
+              ),
+        ]
+      ),
+      bottomNavigationBar: SafeArea(
+        child:  Container(
+          padding:EdgeInsets.all(10),
+          decoration:BoxDecoration(
+            borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
+            color:Colors.black,
           ),
-          Flexible(
-            fit: FlexFit.loose,
-          flex:3,
-          child: ListView(
-            children:[Align(
-              alignment:AlignmentGeometry.centerRight,
-              child: Container(
-                  margin: EdgeInsets.all(40),
-                  padding: EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                      color:Colors.blue,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(30),
-                          topRight: Radius.circular(30),
-                          bottomLeft: Radius.circular(30)
-                      )
-                  ),
-                  child:Column(
-                      children:[
-                        Text('Love you ', style: TextStyle(fontSize: 24, color:Colors.white, fontWeight:FontWeight.bold)),
-                        Image.network('https://picsum.photos/seed/picsum/299/299'),
-                      ]
-                  )
-              ),
-            ),Align(
-              alignment:AlignmentGeometry.centerLeft,
-              child: Container(
-                  margin: EdgeInsets.all(40),
-                  padding: EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                      color:Colors.blue,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(30),
-                          topRight: Radius.circular(30),
-                          bottomRight: Radius.circular(30)
-                      )
-                  ),
-                  child:Column(
-                      children:[
-                        Text("But I don't", style: TextStyle(fontSize: 24, color:Colors.white, fontWeight:FontWeight.bold)),
-                        Image.network('https://picsum.photos/seed/picsum/299/299'),
-                      ]
-                  )
-              ),
-            ),Align(
-              alignment:AlignmentGeometry.centerRight,
-              child: Container(
-                  margin: EdgeInsets.all(40),
-                  padding: EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                      color:Colors.blue,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(30),
-                          topRight: Radius.circular(30),
-                          bottomLeft: Radius.circular(30)
-                      )
-                  ),
-                  child:Column(
-                      children:[
-                        Text('Love you ', style: TextStyle(fontSize: 24, color:Colors.white, fontWeight:FontWeight.bold)),
-                        Image.network('https://picsum.photos/seed/picsum/299/299'),
-                      ]
-                  )
-              ),
-            ),
-
+          height:100,
+          child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children:[
+                IconButton(onPressed: (){print('add');}, icon: Icon(Icons.add, color:Colors.white)),
+                IconButton(onPressed: (){print('send');}, icon: Icon(Icons.send, color:Colors.white))
               ]
           ),
         ),
-         ]
       ),
-
-
     );
-
   }
 }
