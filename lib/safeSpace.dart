@@ -130,10 +130,33 @@ class SafeSpace extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  child:ListView(
-                    children:[
-                      Messages(text: 'hi Bro', role: 'sender')
-                    ]
+                  child:Container(
+                    padding:EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      image:DecorationImage(image: NetworkImage('https://picsum.photos/id/37/800/900'), fit:BoxFit.cover)
+                    ),
+                    child: ListView(
+                      children:[
+                        Messages(text: 'hi Bro', role: 'sender'),
+                        Messages(text: 'hi Bro', role: 'rec'),
+                        Messages(text: 'how is your car', role: 'sender'),
+                        Messages(text: 'you meean the ferrari', role: 'rec'),
+                        Messages(text: 'No bro the one with a horse logo', role: 'sender'),
+                        Messages(text: 'yea the ferrari', role: 'rec'),
+                        Messages(text: 'No bro it has a horse thing on front', role: 'sender'),
+                        Messages(text: "yep that's a ferrari", role: 'rec'),
+                        Messages(text: 'either way what?', role: 'sender'),
+                        Messages(text: 'what do you mean what?', role: 'rec'),
+                        Messages(text: 'you were telling me about my car?', role: 'sender'),
+                        Messages(text: 'When?', role: 'rec'),
+                        Messages(text: 'Just now', role: 'sender'),
+                        Messages(text: "Nope I didn't" , role: 'rec'),
+                        Messages(text: 'hi Bro', role: 'sender'),
+                        Messages(text: 'yes?', role: 'rec'),
+                        Messages(text: "Stop bothering me I'm learning how to flutter :) ", role: 'sender'),
+
+                      ]
+                    ),
                   ),),
                   Row(
                     children: [
