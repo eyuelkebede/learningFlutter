@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:untitled/widgets/dashIcons.dart';
 import 'package:untitled/widgets/nameCard.dart';
-
+import 'package:untitled/widgets/messasges.dart';
 class SafeSpace extends StatelessWidget {
   const SafeSpace({super.key});
 
@@ -27,7 +28,7 @@ class SafeSpace extends StatelessWidget {
                     GetDashIcons(text: 'Edit', icon: Icons.adjust),
                 ] ),),
           Expanded(
-                flex:12,
+                flex:8,
                 child: Column(
                   children: [
                     Container(
@@ -80,7 +81,80 @@ class SafeSpace extends StatelessWidget {
       ),
           Expanded(
             flex:16,
-            child: Text('right'),
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children:[
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children:[
+                          Text('Tsega Bro', style:TextStyle(fontWeight: FontWeight.bold)),
+                          Text('Last Seen Recently')
+                        ]
+                      ),
+
+                      Row(
+                        children: [
+                          IconButton(onPressed: (){print('hi');}, icon: Icon(Icons.search)),
+                          IconButton(onPressed: (){print('hi');}, icon: Icon(Icons.call)),
+                          IconButton(onPressed: (){print('hi');}, icon: Icon(Icons.window)),
+                          IconButton(onPressed: (){print('hi');}, icon: Icon(Icons.details))
+                        ],
+                      ),
+
+                    ]
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(6),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+
+                      Row(
+                        children: [
+                          IconButton(onPressed: (){print('Google Meet');}, icon: Icon(Icons.no_encryption_gmailerrorred)),
+                          Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children:[
+                                Text('Pinned message', style:TextStyle(fontWeight: FontWeight.bold, color:Colors.blue)),
+                                Text('meet.google.com/pkk-gwcs-tab')]
+                          ),],
+                      ),
+
+                      IconButton(onPressed: (){print('Pinned');}, icon: Icon(Icons.pin))
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child:ListView(
+                    children:[
+                      Messages(text: 'hi Bro', role: 'sender')
+                    ]
+                  ),),
+                  Row(
+                    children: [
+                      IconButton(onPressed: (){print('attach');}, icon: Icon(Icons.attach_email)),
+                      Expanded(flex:1,child: TextField(
+                          decoration:InputDecoration(
+                              hintText:'Search',
+                              fillColor: Colors.grey,
+                              border:InputBorder.none,
+                              contentPadding:EdgeInsets.all(10)
+                          )
+                      )),
+                      IconButton(onPressed: (){print('attach');}, icon: Icon(Icons.emoji_emotions)),
+                      IconButton(onPressed: (){print('attach');}, icon: Icon(Icons.voice_chat)),
+
+
+                    ],
+                  ),
+
+              ],
+            ),
             )
     ]),
       )

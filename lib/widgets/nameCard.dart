@@ -10,33 +10,38 @@ class Namecard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return
-        Row(
-          children: [
-            ClipRRect
-              (
-                borderRadius: BorderRadius.circular(50),
-                child: Image(image: img, fit:BoxFit.cover)),
-            Padding(
-              padding: EdgeInsetsGeometry.only(
-                left:10,
-              ),
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                children:[
-                  Align(
-                    alignment: AlignmentGeometry.topLeft,
-                    child: Row(
-                      children: [
-                        IconButton(onPressed: (){print('channel sign');}, icon: Icon(Icons.wifi_channel)),
-                        Text(name, style:TextStyle(fontWeight: FontWeight.bold))
-                      ],
+        Padding(
+          padding: EdgeInsetsGeometry.only(
+            top:10
+          ),
+          child: Row(
+            children: [
+              ClipRRect
+                (
+                  borderRadius: BorderRadius.circular(50),
+                  child: Image(image: img, fit:BoxFit.cover)),
+              Padding(
+                padding: EdgeInsetsGeometry.only(
+                  left:10,
+                ),
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                  children:[
+                    Align(
+                      alignment: AlignmentGeometry.topLeft,
+                      child: Row(
+                        children: [
+
+                          Text(name, style:TextStyle(fontWeight: FontWeight.bold))
+                        ],
+                      ),
                     ),
-                  ),
-                  Text(description)
-                ]
-              ),
-            )
-          ],
+                    Text(description)
+                  ]
+                ),
+              )
+            ],
+          ),
         );
   }
 }
